@@ -12,7 +12,7 @@ interface ApiInterface {
     //https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=23.586761,72.369949
     // &radius=500&type=restaurant&key=AIzaSyBePPBGTexyu_TamKkmqQT0idaeQaGz5uA
 
-    @GET("json") fun googlePlaceLocation(@Header("key") key: String, @Header("location") location: String, @Header("radius") radius: String, @Header("type") type: String)
-            : Observable<LocationResponseBean>
+    @GET("json") fun googlePlaceLocation(@Query("key") key: String, @Query("location") location: String,
+                                         @Query("radius") radius: String, @Query("type") type: String): Observable<LocationResponseBean>
 
 }
